@@ -17,12 +17,20 @@ watch([mouseX, mouseY], () => {
   const xPos = (mouseX.value / window.innerWidth) * 100;
   const yPos = (mouseY.value / window.innerHeight) * 100;
 });
+
+const backgroundStyle = ref({
+  background: 'linear-gradient(45deg, #ff6ec7, #ff8a00, #ff00ff, #00ffff)',
+  backgroundSize: '400% 400%',
+  animation: 'gradient-animation 10s ease infinite',
+  transform: 'scale(1)',
+  transition: 'transform 0.1s ease, background-position 0.1s ease',
+});
 </script>
 
 <template>
   <div class="root">
     <div class="background-image"></div>
-    <div class="background"></div>
+    <div class="background" :style="backgroundStyle"></div>
     <div class="content">
 
     </div>
