@@ -16,6 +16,12 @@ onMounted(() => {
 watch([mouseX, mouseY], () => {
   const xPos = (mouseX.value / window.innerWidth) * 100;
   const yPos = (mouseY.value / window.innerHeight) * 100;
+
+  backgroundStyle.value = {
+    ...backgroundStyle.value,
+    backgroundPosition: `${xPos}% ${yPos}%`,
+    transform: `scale(${1 + xPos / 500})`,
+  };
 });
 
 const backgroundStyle = ref({
@@ -32,7 +38,7 @@ const backgroundStyle = ref({
     <div class="background-image"></div>
     <div class="background" :style="backgroundStyle"></div>
     <div class="content">
-
+      <h1>You think it's funny to ask, HH?</h1>
     </div>
   </div>
 </template>
@@ -57,5 +63,10 @@ const backgroundStyle = ref({
   top: 0;
   left: 0;
   opacity: 30%;
+}
+h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  color: darkslategray;
 }
 </style>
