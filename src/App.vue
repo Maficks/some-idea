@@ -67,6 +67,30 @@ const backgroundStyle = ref({
 h1 {
   font-size: 3rem;
   margin: 20px 0;
-  color: darkslategray;
+  color: black;
+
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #ff6ec7, #ff8a00, #ff00ff, #00ffff);
+  background-size: 400% 400%;
+  animation: gradient-animation 10s ease infinite;
+  transition: transform 0.1s ease, background-position 0.1s ease;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>
