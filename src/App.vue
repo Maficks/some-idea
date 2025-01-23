@@ -50,10 +50,7 @@ const backgroundStyle = ref({
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  overflow: hidden;
 }
 .background-image {
   background: url("assets/1.jpeg") round;
@@ -68,7 +65,11 @@ h1 {
   font-size: 3rem;
   margin: 20px 0;
   color: black;
-
+  border: black solid thick;
+  border-radius: 2rem;
+  padding: 1%;
+  background-color: greenyellow;
+  opacity: 60%;
 }
 .background {
   position: absolute;
@@ -92,5 +93,12 @@ h1 {
   100% {
     background-position: 0% 50%;
   }
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100%;
 }
 </style>
